@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/gejt/my-cloud-config
-          username: gejt
-          password: maths402.
+          username:
+          password:
 
