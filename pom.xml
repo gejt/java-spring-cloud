@@ -7,6 +7,10 @@
     <groupId>xyz.zao123</groupId>
     <artifactId>java-spring-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>eurake-server</module>
+        <module>config-server</module>
+    </modules>
     <packaging>pom</packaging>
 
     <name>java-spring-cloud</name>
@@ -16,26 +20,105 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR5</spring-cloud.version>
+        <spring-boot.version>2.1.14.RELEASE</spring-boot.version>
+        <druid-spring-boot.version>1.1.9</druid-spring-boot.version>
+        <pagehelper-spring-boot.version>1.2.5</pagehelper-spring-boot.version>
+        <mybatis-spring-boot.version>1.3.2</mybatis-spring-boot.version>
+        <mysql-connector.version>5.1.35</mysql-connector.version>
+        <zipkin.version>2.9.4</zipkin.version>
+        <jackson-core.version>1.9.13</jackson-core.version>
+        <lombok.version>1.16.10</lombok.version>
+        <logstash-logback-encoder.version>5.2</logstash-logback-encoder.version>
+        <guava.version>20.0</guava.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <!-- Import dependency management from Spring Boot -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.4.RELEASE</version>
+                <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <exclusions>
+                    <!--和swagger的guava版本冲突-->
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!--Refrence:https://blog.csdn.net/my13413527259/article/details/85779625-->
+            <dependency>
+                <artifactId>guava</artifactId>
+                <groupId>com.google.guava</groupId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.67</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <!--获取参数名称 -->
+                    <!--<compilerArgument>-parameters</compilerArgument> -->
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
