@@ -9,9 +9,10 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 /**
  * @author gejt
  */
-@EnableDiscoveryClient
+
 @SpringBootApplication
 @EnableConfigServer
+@EnableDiscoveryClient
 public class ConfigBootstrap {
 
     public static void main(String[] args) {

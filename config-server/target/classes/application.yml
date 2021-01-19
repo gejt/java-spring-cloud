@@ -11,8 +11,8 @@ spring:
       server:
         git:
           uri: https://github.com/gejt/my-cloud-config
-          username: root
-          password:
+          username: gejt
+          password: maths402.
 eureka:
   client:
     healthcheck:
