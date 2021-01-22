@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author gejt
+ * POST -X http://192.168.31.225:8080/actuator/refresh
+ * 刷新配置
  */
 @RestController
 @RefreshScope
