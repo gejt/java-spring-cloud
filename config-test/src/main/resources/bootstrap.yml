@@ -1,0 +1,28 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: config-test
+  cloud:
+    discovery:
+      enabled: true
+    config:
+      uri: http://127.0.0.1:3301
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaulZone: http://127.0.0.1:8761/eureka/
+      #,http://127.0.0.1:8762/eureka/,http://127.0.0.1:8763/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
