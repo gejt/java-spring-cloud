@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>config-test</artifactId>
+    <artifactId>zuul-server</artifactId>
 
     <dependencies>
         <dependency>
@@ -29,12 +29,9 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>xyz.zao123</groupId>
-            <artifactId>config-test-dto</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>

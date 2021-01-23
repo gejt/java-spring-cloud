@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import xyz.zao123.configtest.HelloWorldDto;
 
 /**
  * @author gejt
@@ -22,6 +23,11 @@ public class IndexController {
     @GetMapping("/")
     public String index(){
         return test;
+    }
+
+    @GetMapping("/sayHello")
+    public HelloWorldDto sayHello(String name){
+        return new HelloWorldDto().setName(name).setMsg(test);
     }
 
 }
