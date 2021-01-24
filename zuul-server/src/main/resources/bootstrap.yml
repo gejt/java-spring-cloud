@@ -25,7 +25,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh,routes,filters
+        include: refresh,routes,filters,metrics
 logging:
   level:
     root: info
