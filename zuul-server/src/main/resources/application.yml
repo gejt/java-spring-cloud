@@ -1,6 +1,8 @@
 zuul:
+  ignored-services: '*'
   routes:
     config-test-api:
       serviceId: config-test
       path: /api/**
+
 
