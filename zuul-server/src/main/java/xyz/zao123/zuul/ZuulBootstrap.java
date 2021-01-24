@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import xyz.zao123.zuul.fallback.DefaultFallbackProvider;
 import xyz.zao123.zuul.fallback.MyFallbackProvider;
 
@@ -26,5 +28,20 @@ public class ZuulBootstrap {
     @Bean
     public FallbackProvider apiFallbackProvider(){
         return new MyFallbackProvider();
+    }
+
+    /**
+     * 允许跨站访问
+     * @return
+     */
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/api/**")
+                        .allowedOrigins("https://www.baidu.com")
+                        .allowedMethods("GET", "POST");
+            }
+        };
     }
 }
