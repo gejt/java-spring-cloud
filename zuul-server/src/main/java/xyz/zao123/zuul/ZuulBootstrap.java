@@ -18,10 +18,10 @@ public class ZuulBootstrap {
         SpringApplication.run(ZuulBootstrap.class,args);
     }
 
-//    @Bean
-//    public FallbackProvider defaulFallbackProvider(){
-//        return new DefaultFallbackProvider();
-//    }
+    @Bean
+    public FallbackProvider defaulFallbackProvider(){
+        return new DefaultFallbackProvider();
+    }
 
     @Bean
     public FallbackProvider apiFallbackProvider(){
