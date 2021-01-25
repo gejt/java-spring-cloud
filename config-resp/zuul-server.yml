@@ -1,0 +1,9 @@
+zuul:
+  ignored-services:  '*'
+  routes:
+    config-test-api:
+      serviceId: config-test
+      path: /api/**
+    config-test-api2:
+      serviceId: config-test
+      path: /api2/**

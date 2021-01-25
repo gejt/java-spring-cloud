@@ -10,11 +10,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/gejt/my-cloud-config.git
+          uri: https://github.com/gejt/java-spring-cloud.git
 #          username:
 #          password: # public 的不用用户名和密码
-          search-paths: /config
-          default-label: main # github 默认为main分支了 不是master分支了
+          search-paths: /config-resp
+          default-label: master # github 默认为main分支了 不是master分支了
           skip-ssl-validation: true
           timeout: 20
 

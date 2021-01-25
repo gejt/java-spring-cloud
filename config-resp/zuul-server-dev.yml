@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    config-test-api:
+      serviceId: config-test
+      path: /capi/**
