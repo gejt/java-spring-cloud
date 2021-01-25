@@ -1,10 +1,12 @@
 package xyz.zao123.zuul.fallback;
 
+import org.springframework.boot.actuate.autoconfigure.web.server.ConditionalOnManagementPort;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -13,6 +15,7 @@ import java.io.InputStream;
 /**
  * @author gejt
  */
+@Component
 public class DefaultFallbackProvider implements FallbackProvider {
 
     @Override

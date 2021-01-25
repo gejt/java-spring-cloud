@@ -7,8 +7,6 @@ import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import xyz.zao123.zuul.fallback.DefaultFallbackProvider;
-import xyz.zao123.zuul.fallback.MyFallbackProvider;
 
 /**
  * @author gejt
@@ -20,7 +18,7 @@ public class ZuulBootstrap {
         SpringApplication.run(ZuulBootstrap.class,args);
     }
 
-    @Bean
+    /*@Bean
     public FallbackProvider defaulFallbackProvider(){
         return new DefaultFallbackProvider();
     }
@@ -28,7 +26,7 @@ public class ZuulBootstrap {
     @Bean
     public FallbackProvider apiFallbackProvider(){
         return new MyFallbackProvider();
-    }
+    }*/
 
     /**
      * 允许跨站访问
