@@ -1,13 +1,16 @@
 package xyz.zao123.orderservice;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author gejt
  */
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
+@SpringBootApplication
+@EnableTransactionManagement
+@MapperScan(basePackages = "xyz.zao123.orderservice.mapper")
 public class OrderServiceBootstrap {
 
 
