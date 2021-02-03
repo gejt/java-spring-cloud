@@ -14,6 +14,7 @@
         <module>common-bean</module>
         <module>config-test-dto</module>
         <module>zuul-server</module>
+        <module>order-service</module>
     </modules>
     <packaging>pom</packaging>
 
