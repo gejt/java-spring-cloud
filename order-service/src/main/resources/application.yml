@@ -12,44 +12,13 @@ db:
 # 配置数据源
 spring:
     datasource:
-      type: com.alibaba.druid.pool.DruidDataSource
       driver-class-name: com.mysql.jdbc.Driver
       url:  jdbc:mysql://${db.mysql.host}:${db.mysql.port}/${db.mysql.dbname}?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
       username: ${db.mysql.username}
       password: ${db.mysql.password}
-      druid:
-#        url: mysql://${db.mysql.host}:${db.mysql.port}/${db.mysql.dbname}?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
-#        username: ${db.mysql.username}
-#        password: ${db.mysql.password}
-        initial-size: 5
-        max-active: 20
-        min-idle: 5
-        max-wait: 60000
-        pool-prepared-statements: false
-        validation-query: SELECT 1
-        validation-query-timeout: 30000
-        test-on-borrow: true
-        test-on-return: false
-        test-while-idle: true
-
-#        master:
-#          name: master
-#          driver-class-name: com.mysql.jdbc.Driver
-#          url=jdbc: mysql://${db.mysql.host}:${db.mysql.port}/${db.mysql.dbname}?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
-#          port: ${db.mysql.port}
-#          username: ${db.mysql.username}
-#          password: ${db.mysql.password}
-#        slave:
-#          name: slave
-#          driver-class-name: com.mysql.jdbc.Driver
-#          url=jdbc: mysql://${db.mysql.host}:${db.mysql.port}/${db.mysql.dbname}?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
-#          port: ${db.mysql.port}
-#          username: ${db.mysql.username}
-#          password: ${db.mysql.password}
-
 # mybatis 配置
 mybatis:
-  type-aliases-package: xyz.zao123.orderservice.entity
+  type-aliases-package: com.zao123.orderservice.entity
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml

@@ -1,4 +1,4 @@
-package xyz.zao123.orderservice;
+package com.zao123.orderservice;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @EnableTransactionManagement
-@MapperScan(basePackages = "xyz.zao123.orderservice.mapper")
+@MapperScan(basePackages = "com.zao123.orderservice.mapper")
 public class OrderServiceBootstrap {
 
 

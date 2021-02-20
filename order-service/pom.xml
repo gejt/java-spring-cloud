@@ -29,10 +29,10 @@
             <!--<artifactId>pagehelper-spring-boot-starter</artifactId>-->
         <!--</dependency>-->
         <!-- druid数据源starter -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>druid-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
         <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>

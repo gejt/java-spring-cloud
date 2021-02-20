@@ -1,9 +1,9 @@
-package xyz.zao123.orderservice.controller;
+package com.zao123.orderservice.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import xyz.zao123.orderservice.entity.Order;
-import xyz.zao123.orderservice.service.OrderService;
+import com.zao123.orderservice.entity.Order;
+import com.zao123.orderservice.service.OrderService;
 
 import javax.annotation.Resource;
 
